@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico">
+  <title>TOPUP form</title>
+  <style>
+    html, body {
+      min-height: 100%;
+    }
+
+    body, div, form, input, select, p {
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 16px;
+      color: #eee;
+    }
+
+    body {
+      background-size: cover;
+    }
+    
+    #clock {
+      font-family: 'Arial', sans-serif;
+      font-size: 2em;
+      text-align: center;
+      margin: 10px;
+      color: #000; /* Set the color to black */
+    }
+
+    h1, h2 {
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .main-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .left-part, form {
+      padding: 25px;
+    }
+
+    .left-part {
+      text-align: center;
+    }
+
+    .fa-graduation-cap {
+      font-size: 72px;
+    }
+
+    form {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      margin-bottom: 20px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #eee;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #eee;
+    }
+
+    .checkbox input {
+      margin: 0 10px 0 0;
+      vertical-align: middle;
+    }
+
+    .checkbox a {
+      color: #26a9e0;
+    }
+
+    .checkbox a:hover {
+      color: #85d6de;
+    }
+
+    .btn-item, button {
+      padding: 10px 5px;
+      margin-top: 20px;
+      border-radius: 5px;
+      border: none;
+      background: #26a9e0;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 400;
+      color: #fff;
+      display: inline-block;
+    }
+
+    button {
+      width: 100%;
+    }
+
+    button:hover, .btn-item:hover {
+      background: #85d6de;
+    }
+
+    .radio-group {
+      margin-bottom: 20px;
+    }
+
+    .radio-group h3 {
+      text-align: center;
+    }
+
+    .radio-group ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .radio-group li {
+      margin-bottom: 10px;
+    }
+
+
+  </style>
+</head>
+<body>
+  
+  <div class="main-block">
+    <div id="clock" name="Clock">
+      <input type="hidden" name="Clock" id="Clock">
+    </div>
+
+<script>
+  function updateClock() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    var day = now.getDate();
+    var month = now.getMonth() + 1; // Months are zero-based
+    var year = now.getFullYear();
+
+    // Pad single digit minutes, seconds, and months with a leading zero
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    month = month < 10 ? "0" + month : month;
+
+    var timeString = hours + ":" + minutes + ":" + seconds;
+    var dateString = day + "/" + month + "/" + year;
+
+    document.getElementById('clock').innerText = timeString + " | " + dateString;
+  }
+
+  // Update the clock every second
+  setInterval(updateClock, 1000);
+
+  // Initial call to display the clock immediately
+  updateClock();
+</script>
+
+    <div class="left-part">
+      <i class="fas fa-graduation-cap"></i>
+      <img src="download.jpg" alt="Logo Image">
+      <b><h1 align="center">SK topup center</h1></b>
+      <img src="11.png" alt="Another Image">
+      <div class="btn-group">
+        <a class="btn-item" href="about us.html">About us</a>
+        <a class="btn-item" href="https://www.facebook.com/profile.php?id=61556735253282">Facebooks</a>
+      </div>
+    </div>
+    <form action="https://script.google.com/macros/s/AKfycbwe1GshtW-HHv6hte6sW_jCSr5p7yhxT8TxwI-aiP_gSqNuJhyibUgwbIoYU2F6eZ17ng/exec" method="post" name="submit-to-google-sheet">
+      <div class="title">
+        <i class="fas fa-pencil-alt"></i>
+        <h2>Order here</h2>
+      </div>
+      <dev id="res" style="color: green;font-size: 14px;">
+        
+      </dev>
+    <form>
+  <div class="info">
+    <label for="Name">Full Name:</label>
+    <input class="fname" type="text" name="Name" id="Name" placeholder="Name">
+
+    <label for="Email">Email:</label>
+    <input type="text" name="Email" id="Email" placeholder="Email">
+
+    <label for="Phone">Phone:</label>
+    <input type="text" name="Phone" id="Phone" placeholder="Phone">
+
+    <label for="UID">FF UID:</label>
+    <input type="text" name="UID" id="UID" placeholder="UID">
+<div class="radio-group" id="Diamonds">
+  <h3>Choose diamond</h3>
+  <label for="Diamond"><b>Diamond Options</b></label>
+  <ul id="Diamond">
+    <li>
+      <input type="radio" name="Diamond" id="Diamond" value="115 Diamonds-NPR85">
+      <label for="diamond-115">115 Diamonds-NPR85</label>
+    </li>
+    <li>
+      <input type="radio" name="Diamond" id="Diamond" value="240 Diamonds-NPR170">
+      <label for="diamond-240">240 Diamonds-NPR170</label>
+    </li>
+    <li>
+      <input type="radio" name="Diamond" id="Diamond" value="610 Diamonds-NPR500">
+      <label for="diamond-610">610 Diamonds-NPR500</label>
+    </li>
+    <li>
+      <input type="radio" name="Diamond" id="Diamond" value="850 Diamonds-NPR650">
+      <label for="diamond-850">850 Diamonds-NPR650</label>
+    </li>
+    <li>
+      <input type="radio" name="Diamond" id="Diamond" value="1240 Diamonds-NPR900">
+      <label for="diamond-1240">1240 Diamonds-NPR949</label>
+    </li>
+    <li>
+      <input type="radio" name="Diamond" id="Diamond" value="1595 Diamonds-NPR1200">
+      <label for="diamond-1595">1595 Diamonds-NPR1250</label>
+    </li>
+    <li>
+      <input type="radio" name="Diamond" id="Diamond" value="level of pass">
+      <label for="level of pass">level of pass-NPR170</label>
+    </li>
+     <li>
+      <input type="radio" name="Diamond" id="Diamond" value=" weekly">
+      <label for="weekly">weekly-NPR170</label>
+    </li>
+     <li>
+      <input type="radio" name="Diamond" id="Diamond" value="Monthly">
+      <label for="Monthly">Monthly-NPR870</label>
+    </li>
+  </ul>
+</div>
+
+    <div class="radio-group" id="PaymentMethod">
+      <label for="PaymentMethod"><h3><b>Payment Method</b></h3></label>
+      <!-- <input type="radio" name="PaymentMethod" id="khalti" value="khalti">
+      <label for="khalti">Khalti (9842381970)</label> -->
+      <input type="radio" name="PaymentMethod" id="esewa" value="esewa" checked>
+      <label for="esewa">Esewa (9811392741)</label><br>
+      <!-- Add similar input and label elements for other payment options -->
+      <img src="s.jpg" width="150pix
+    " align="center">
+    </div>
+
+    <div>
+      <label for="Message">Messages:</label>
+      <textarea id="Message" name="Message" rows="4" required></textarea>
+    </div>
+  </div>
+
+  <div class="Checkbox">
+    <input type="Checkbox" name="Checkbox" id="privacyCheckbox">
+    <label for="privacyCheckbox">I agree to the Privacy Policy for SK.</label>
+  </div>
+
+  <button type="submit" name="btn">Submit</button>
+</form>
+  </div>
+  <div id="app" name="time">
+  <script src='https://npmcdn.com/react@15.3.0/dist/react.min.js'></script>
+<script src='https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js'></script>
+
+    <script src="js/index.js"></script>
+    </div>
+</body>
+
+
+   <script>
+   let url='https://script.google.com/macros/s/AKfycbwe1GshtW-HHv6hte6sW_jCSr5p7yhxT8TxwI-aiP_gSqNuJhyibUgwbIoYU2F6eZ17ng/exec'
+
+    document.getElementById('form').addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById('submitBtn').innerHTML = "Submitting...";
+      let formData = new FormData(this);
+
+      fetch(url, {
+        method: "POST",
+        body: formData
+      }).then((res) => res.text())
+        .then((finalRes) => {
+          document.getElementById('submitBtn').innerHTML = "Submit";
+          console.log(finalRes);
+          // Display a confirmation message or handle as needed
+        })
+        .catch((error) => {
+          console.error("Error submitting form:", error);
+          // Handle the error and provide feedback to the user
+        });
+    });
+
+    function resetForm() {
+      document.getElementById('form').reset();
+    }
+  </script>
+
+</html>
